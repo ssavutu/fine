@@ -1,3 +1,12 @@
-/* typedef enum {
+typedef enum {
+	INT,
+	CHAR,
+	FLOAT,
+	DOUBLE,
+} tokenType;
 
-} token; */
+typedef struct {
+	char* contents;
+	int length;
+	tokenType type;
+} Token;
