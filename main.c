@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "types.h"
+#include "tokenize.h"
 
 int main (int argc, char* argv[]){
 
@@ -23,7 +23,7 @@ int main (int argc, char* argv[]){
     fread(contents, sizeof(char), len, f);
     fclose(f);
 
-	printf(contents);
-		
-	return 0;
+    tokenize(contents, len);
+    printf(contents);
+    return 0;
 }
