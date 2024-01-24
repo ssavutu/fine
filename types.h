@@ -1,3 +1,5 @@
+#pragma once
+
 #define LEFT_PAREN 40
 #define RIGHT_PAREN 41
 #define DOUBLE_QUOTE 34
@@ -8,6 +10,7 @@ typedef enum {
 	CHAR,
 	FLOAT,
 	DOUBLE,
+  END,
   LEFTPAREN,
   RIGHTPAREN,
 } tokenType;
