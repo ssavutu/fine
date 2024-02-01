@@ -10,13 +10,12 @@ typedef enum {
 	CHAR,
 	FLOAT,
 	DOUBLE,
-  END,
-  LEFTPAREN,
-  RIGHTPAREN,
+  	END,
+  	LEFTPAREN,
+  	RIGHTPAREN,
 } tokenType;
 
 typedef struct {
 	char* contents;
-	int length;
 	tokenType type;
 } Token;

@@ -23,7 +23,6 @@ int main (int argc, char* argv[]){
     fread(contents, sizeof(char), len, f);
     fclose(f);
 
-    tokenize(contents, len);
-    printf(contents);
+    Token * tokens = tokenize(contents, len);
     return 0;
 }
