@@ -24,5 +24,10 @@ int main (int argc, char* argv[]){
     fclose(f);
 
     Token * tokens = tokenize(contents, len);
+    int x = 0;
+    while(tokens[x].type != END) {
+        printf("Token of type %d\n", tokens[x].type);
+        x++;
+    }
     return 0;
 }

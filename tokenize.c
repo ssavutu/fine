@@ -11,18 +11,20 @@ Token * tokenize(char * contents, size_t len){ // returns the contents of the fi
     size_t count = 0;
     
     for (size_t currentChar = 0; currentChar < len; currentChar++){ // read 1 char at a time until EOF
-
-        if (contents[currentChar] == LEFT_PAREN){
-
-            Token t;
-            t.type = LEFTPAREN;
-            t.contents = NULL;
-  
-            tokens = realloc(tokens, (count + 1)*sizeof(Token));
-            tokens[count] = t;
-            count++;
-
+        Token temp;
+        switch (contents[currentChar]) {
+            case '(':
+                temp = (Token){LEFTPAREN, NULL};
+                break;
+            case ')':
+                temp = (Token){RIGHTPAREN, NULL};
+                break;
+            default:
+                continue;
         }
+        tokens = realloc(tokens, (count + 1)*sizeof(Token));
+        tokens[count] = temp;
+        count++;
     }
 
     tokens = realloc(tokens, (count + 1)*sizeof(Token));
